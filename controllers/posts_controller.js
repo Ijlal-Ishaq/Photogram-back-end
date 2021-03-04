@@ -3,11 +3,11 @@ const authcontroller=require('../controllers/auth_controller');
   
 var admin = require("firebase-admin");
 
-var serviceAccount = require("../insta-clone-305513-firebase-adminsdk-ku99t-f12f7007b9.json");
+var serviceAccount = require("...");
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    storageBucket: "insta-clone-305513.appspot.com"
+    storageBucket: "......."
 });
 
 var bucket = admin.storage().bucket();

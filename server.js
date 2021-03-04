@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(express.static('uploads'));
 
  
-const dbURI ='mongodb+srv://admin:infinitywar@cluster0.rs5ut.mongodb.net/project?retryWrites=true&w=majority'; 
+const dbURI ='mongodb...'; 
 mongoose.connect(dbURI, { useNewUrlParser:true, useUnifiedTopology: true})
 .then((result)=>{
     app.listen(port,()=>{console.log(port)}); 

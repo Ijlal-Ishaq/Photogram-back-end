@@ -80,7 +80,7 @@ const login = (req,res,next)=>{
                 }
                 if(result){
 
-                    let token =jwt.sign({username:user.username,id:user.id},'avengers',{expiresIn:3*24*60*60});
+                    let token =jwt.sign({username:user.username,id:user.id},'key',{expiresIn:3*24*60*60});
                 //    res.cookie('token',token,{httpOnly:true,maxAge: 3*24*60*60*1000});
                     res.json({
                         message:'Login Successful',
@@ -122,7 +122,7 @@ const check_login=(req,res,next)=>{
 
     if(token){
 
-        jwt.verify(token,'avengers',(error,result)=>{
+        jwt.verify(token,'key',(error,result)=>{
 
             if(error){
                 console.log(error);
@@ -156,7 +156,7 @@ function check_auth_by_token(token){
 
     if(token){
 
-        jwt.verify(token,'avengers',(error,result)=>{
+        jwt.verify(token,'key',(error,result)=>{
 
             if(error){
                 
@@ -188,7 +188,7 @@ const check_auth=(req,res,next)=>{
 
     if(token){
 
-        jwt.verify(token,'avengers',(error,result)=>{
+        jwt.verify(token,'key',(error,result)=>{
 
             if(error){
                 res.json({
@@ -220,7 +220,7 @@ const get_info=(req,res,next)=>{
 
     if(token){
 
-        jwt.verify(token,'avengers',(error,result)=>{
+        jwt.verify(token,'key',(error,result)=>{
 
             if(error){
                 res.json({
@@ -270,7 +270,7 @@ const get_all_posts=(req,res,next)=>{
 
     if(token){
 
-        jwt.verify(token,'avengers',(error,result)=>{
+        jwt.verify(token,'key',(error,result)=>{
 
             if(error){
                 res.json({
@@ -324,7 +324,7 @@ const get_all_my_posts=(req,res,next)=>{
 
     if(token){
 
-        jwt.verify(token,'avengers',(error,result)=>{
+        jwt.verify(token,'key',(error,result)=>{
 
             if(error){
                 res.json({
